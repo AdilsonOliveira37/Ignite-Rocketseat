@@ -7,13 +7,13 @@ const isDevelopment = process.env.NODE_ENV !== 'production'
 module.exports = {
     mode: 'development',
     devtool: isDevelopment ? 'eval-source-map' : 'source-map',
-    entry: path.resolve(__dirname, 'src', 'index.jsx'),
+    entry: path.resolve(__dirname, 'src', 'index.tsx'),
     output: {
         path: path.resolve(__dirname,'dist'),
         filename: 'bundle.js'
     },
     resolve: {
-        extensions: ['.js', '.jsx'],
+        extensions: ['.js', '.jsx', '.ts', '.tsx'],
     },
     plugins: [
         isDevelopment && new ReactRefreshWebpackPlugin(),
@@ -28,7 +28,7 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.jsx$/,
+                test: /\.(j|t)sx$/,
                 exclude: /node_modules/,
                 use: {
                     loader: 'babel-loader',

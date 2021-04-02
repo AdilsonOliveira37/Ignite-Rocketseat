@@ -1,7 +1,7 @@
+import { useState, useEffect } from "react";
 import { RepositoryItem } from "./RepositoryItem";
 
 import '../styles/repositories.scss';
-import { useState, useEffect } from "react";
 
 // https://api.github.com/users/adilsonoliveira37
 
